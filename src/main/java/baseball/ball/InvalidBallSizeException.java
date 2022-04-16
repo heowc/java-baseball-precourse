@@ -4,7 +4,7 @@ import java.util.List;
 
 import static java.util.Objects.requireNonNull;
 
-public final class InvalidBallSizeException extends RuntimeException {
+public final class InvalidBallSizeException extends IllegalArgumentException {
 
     public InvalidBallSizeException(List<Ball> balls) {
         super(message(requireNonNull(balls, "balls")));

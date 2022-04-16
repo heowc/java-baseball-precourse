@@ -4,6 +4,7 @@ import baseball.ball.Balls;
 
 import java.util.Arrays;
 
+@FunctionalInterface
 public interface Referee {
 
     static Referee of() {

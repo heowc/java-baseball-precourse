@@ -40,15 +40,4 @@ public final class JudgmentResult {
     public String toString() {
         return value.toString();
     }
-
-//    public String prettyHint() {
-//        final StringBuilder builder = new StringBuilder();
-//        for (Map.Entry<Judgment, Integer> entry : value.entrySet()) {
-//            final Judgment judgment = entry.getKey();
-//            final Integer count = entry.getValue();
-//            builder.append(judgment.hint(count))
-//                   .append(DELIMITER);
-//        }
-//        return builder.toString().trim();
-//    }
 }

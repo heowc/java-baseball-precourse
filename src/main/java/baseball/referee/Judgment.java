@@ -1,6 +1,6 @@
 package baseball.referee;
 
-enum Judgment {
+public enum Judgment {
 
     STRIKE("스트라이크"),
     BALL("볼"),
