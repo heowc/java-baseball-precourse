@@ -6,7 +6,7 @@ import static java.util.Objects.requireNonNull;
 
 public final class Balls {
 
-    static final int SIZE = 3;
+    public static final int SIZE = 3;
 
     private final List<Ball> value;
 
@@ -14,6 +14,10 @@ public final class Balls {
         this.value = Collections.unmodifiableList(value);
     }
 
+    public static Balls of(Ball... value) {
+        requireNonNull(value, "value");
+        return of(Arrays.asList(value));
+    }
     public static Balls of(List<Ball> value) {
         requireNonNull(value, "value");
         return new Balls(validate(value));
