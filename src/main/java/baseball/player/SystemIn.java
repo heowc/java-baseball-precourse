@@ -14,7 +14,6 @@ public class SystemIn implements Player {
     @Override
     public Balls balls() {
         final String rawBalls = Console.readLine();
-        System.out.println(rawBalls);
         final List<Ball> balls = new ArrayList<>(Balls.SIZE);
         for (String rawBall : PATTERN.split(rawBalls)) {
             final Ball ball = Ball.of(Integer.parseInt(rawBall));

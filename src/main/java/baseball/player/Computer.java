@@ -9,16 +9,6 @@ import java.util.List;
 
 class Computer implements Player {
 
-    private final List<Integer> rawBallList;
-
-    Computer() {
-        final List<Integer> list = new ArrayList<>();
-        for (int i = Ball.MIN_VALUE; i <= Ball.MAX_VALUE; i++) {
-            list.add(i);
-        }
-        rawBallList = list;
-    }
-
     @Override
     public Balls balls() {
         final List<Integer> numbers = new ArrayList<>(Balls.SIZE);
@@ -26,17 +16,20 @@ class Computer implements Player {
             final int number = Randoms.pickNumberInRange(Ball.MIN_VALUE, Ball.MAX_VALUE);
             addIfNotContains(numbers, number);
         }
-
-        final List<Ball> ballList = new ArrayList<>(numbers.size());
-        for (int value : numbers) {
-            ballList.add(Ball.of(value));
-        }
-        return Balls.of(ballList);
+        return toBalls(numbers);
     }
 
     private static void addIfNotContains(List<Integer> numbers, int number) {
         if(!numbers.contains(number)){
             numbers.add(number);
         }
+    }
+
+    private static Balls toBalls(List<Integer> numbers) {
+        final List<Ball> ballList = new ArrayList<>(numbers.size());
+        for (int value : numbers) {
+            ballList.add(Ball.of(value));
+        }
+        return Balls.of(ballList);
     }
 }

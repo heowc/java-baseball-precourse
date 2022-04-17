@@ -12,7 +12,7 @@ public final class JudgmentResult {
 
     private final Map<Judgment, Integer> value;
 
-    private JudgmentResult(final Map<Judgment, Integer> value) {
+    private JudgmentResult(Map<Judgment, Integer> value) {
         this.value = new EnumMap<>(value);
     }
 
@@ -20,7 +20,7 @@ public final class JudgmentResult {
         return new JudgmentResult(new EnumMap<>(Judgment.class));
     }
 
-    public void add(final Judgment judgment) {
+    public void add(Judgment judgment) {
         value.merge(judgment, 1, Integer::sum);
     }
 
@@ -32,7 +32,7 @@ public final class JudgmentResult {
         return Collections.unmodifiableMap(value);
     }
 
-    int count(final Judgment judgment) {
+    int count(Judgment judgment) {
         return value.getOrDefault(judgment, DEFAULT_COUNT);
     }
 

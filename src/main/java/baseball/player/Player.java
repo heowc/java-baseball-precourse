@@ -2,6 +2,7 @@ package baseball.player;
 
 import baseball.ball.Balls;
 
+@FunctionalInterface
 public interface Player {
 
     static Player computer() {
